@@ -4,8 +4,7 @@ from app.models import user, record
 from app.api.routes import auth, users
 from app.api.routes import records
 from app.api.routes import dashboard
-
-
+from fastapi.middleware.cors import CORSMiddleware
 
 Base.metadata.create_all(bind=engine)
 
@@ -15,6 +14,16 @@ app.include_router(auth.router, prefix="/auth", tags=["Auth"])
 app.include_router(users.router, prefix="/users", tags=["Users"])
 app.include_router(records.router, prefix="/records", tags=["Records"])
 app.include_router(dashboard.router, prefix="/dashboard", tags=["Dashboard"])
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # allow all (for dev)
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 
 
 
