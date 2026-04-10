@@ -98,8 +98,11 @@ It allows different users (Admin, Analyst, Viewer) to interact with financial da
 ## 🧪 Testing
 
 Tested using:
-- Swagger UI → `/docs`
-- Postman
+- Swagger UI → `/docs` : https://finance-dashboard-backend-crza.onrender.com/docs
+
+- Deployment → Render → https://finance-dashboard-backend-crza.onrender.com/
+
+- Postman    
 
 ---
 
